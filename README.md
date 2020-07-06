@@ -2,7 +2,7 @@
 
 ## Projeto público para os alunos baixarem
 
-*Este projeto tem por finalidade praticar um pouco de PHP com MySQL*
+### Este projeto tem por finalidade praticar um pouco de PHP com MySQL
 
 1. Este repositório poderá ser usado como guia para os alunos criarem seus projetos;
 2. Para termos um melhor controle das informações, sem ter a necessidade de fazer clone diretamente, faça login com sua conta GitHub, entre no repositório no link [aqui](https://github.com/andreadelucca/controle-usuarios-v1);
