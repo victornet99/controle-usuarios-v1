@@ -16,14 +16,6 @@
     private $login;
     private $senha;
 
-    # Declaração de métodos mágicos
-
-    public function __get($name){
-      return $this->$name;
-    }
-
-    public function __set($name, $value){
-      $this->$name = $value;
-    }
+    
 
   }
