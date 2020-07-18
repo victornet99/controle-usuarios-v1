@@ -122,4 +122,62 @@ class userAccess {
 
   }
 
+  public function atualizarUsuarios (Usuario $usuario) {
+
+    try {
+      
+      $conexao = getConnection();
+      $sql = 'UPDATE usuario SET nome = :nome, sobrenome = :sobrenome, idade = :idade,'.
+      ' contato = :contato, login = :login, senha = :senha WHERE idusuario = :id';
+
+      $statement = $conexao->prepare($sql);
+
+      $statement->bindValue(':nome', $usuario->getNomeusuario(), PDO::PARAM_STR);
+      $statement->bindValue(':sobrenome', $usuario->getSobrenome(), PDO::PARAM_STR);
+      $statement->bindValue(':idade', $usuario->getIdadeusuario(), PDO::PARAM_INT);
+      $statement->bindValue(':contato', $usuario->getContato(), PDO::PARAM_INT);
+      $statement->bindValue(':login', $usuario->getLogin(), PDO::PARAM_STR);
+      $statement->bindValue(':senha', $usuario->getSenha(), PDO::PARAM_STR);
+      $statement->bindValue(':id', $usuario->getIdusuario(), PDO::PARAM_INT);
+
+      $statement->execute();
+
+      if($statement->rowCount() > 0){
+        return true;
+      }
+
+      return false;
+
+    } catch (PDOException $exception) {
+      
+      echo "A função retornou o seguinte erro: " . $exception->getMessage();
+
+    }
+  }
+
+  public function deletarUsuarios (Usuario $usuario) {
+
+    try {
+      
+      $conexao = getConnection();
+      $sql = 'DELETE FROM usuario WHERE idusuario = :id';
+      $statement->prepare($sql);
+      
+      $statement->bindValue(':iduser', $usuario->getIdusuario(), PDO::PARAM_INT);
+      $statement->execute();
+
+      if($statement->rowCount() > 0){
+        return true;
+      }
+
+      return false;
+
+    } catch (PDOException $exception) {
+      
+      echo "A função retornou o seguinte erro: " . $exception->getMessage();
+
+    }
+
+  }
+
 }
