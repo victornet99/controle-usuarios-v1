@@ -8,10 +8,8 @@
     class controleUsuarios extends Usuario {
 
         public function carregarUsuario (Usuario $usuario){
-
             $user = new UserAccess();
             return $user->listarUsuarios($usuario);
-
         }
 
         public function salvarUsuario (Usuario $usuario){
@@ -31,7 +29,6 @@
                 } else {
                     echo "<script>alert('Erro ao salvar');</script>";
                 }
-
             } else {
                 echo "<script>alert('Erro ao processar a requisição.');</script>";
             }
@@ -59,15 +56,11 @@
                 } else {
                     echo "<script>alert('Erro ao atualizar');</script>";
                 }
-
             } else {
-                
                 echo "<script>alert('Erro ao processar a requisição.');</script>";
-
             }
             $user = new UserAccess();
             return $user->listarUsuarios($usuario);
-
         }
 
         public function deletarUsuario (Usuario $usuario){
