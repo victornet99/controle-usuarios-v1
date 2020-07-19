@@ -5,7 +5,7 @@ include_once '../mapping/usuario.class.php';
 
 class userAccess {
 
-  public function salvarUsuario (Usuario $usuario) {
+  public function salvarUsuarios (Usuario $usuario) {
 
     try {
 
