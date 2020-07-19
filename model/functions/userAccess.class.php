@@ -82,8 +82,7 @@ class userAccess {
     try {
       
       $conexao = getConnection();
-      $sql = 'UPDATE usuario SET nome = :nome, sobrenome = :sobrenome, idade = :idade,'.
-      ' contato = :contato, login = :login, senha = :senha WHERE idusuario = :id';
+      $sql = 'UPDATE usuario SET nomeusuario = :nome, sobrenome = :sobrenome, idadeusuario = :idade, contato = :contato, login = :login, senha = :senha WHERE idusuario = :id';
 
       $statement = $conexao->prepare($sql);
 
@@ -116,9 +115,9 @@ class userAccess {
       
       $conexao = getConnection();
       $sql = 'DELETE FROM usuario WHERE idusuario = :id';
-      $statement->prepare($sql);
+      $statement = $conexao->prepare($sql);
       
-      $statement->bindValue(':iduser', $usuario->getIdusuario(), PDO::PARAM_INT);
+      $statement->bindValue(':id', $usuario->getIdusuario(), PDO::PARAM_INT);
       $statement->execute();
 
       if($statement->rowCount() > 0){
