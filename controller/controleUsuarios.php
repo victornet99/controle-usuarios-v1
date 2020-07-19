@@ -24,14 +24,13 @@
 
                 $user = new UserAccess();
 
-                if($user->salvarUsuario($usuario)){
+                if($user->salvarUsuarios($usuario)){
                     echo "<script>alert('Salvo com sucesso!');</script>";
                 } else {
                     echo "<script>alert('Erro ao salvar');</script>";
                 }
-            } else {
-                echo "<script>alert('Erro ao processar a requisição.');</script>";
             }
+           
         }
 
         public function atualizaUsuario (Usuario $usuario){

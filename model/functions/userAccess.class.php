@@ -1,7 +1,7 @@
 <?php
 
-include_once '../database/db-connect.php';
-include_once '../mapping/usuario.class.php';
+include_once '../model/database/db-connect.php';
+include_once '../model/mapping/usuario.class.php';
 
 class userAccess {
 
