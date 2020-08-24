@@ -19,6 +19,9 @@
 -- Table structure for table `usuario`
 --
 
+CREATE DATABASE IF NOT EXISTS `controle-usuarios`;
+USE `controle-usuarios`;
+
 DROP TABLE IF EXISTS `usuario`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
