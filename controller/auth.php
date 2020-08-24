@@ -18,8 +18,8 @@ if((mysqli_num_rows($result) > 0)&&(mysqli_num_rows($result) < 2)){
 
     echo "
 		<script>
-			alert('Bem vindo, ".$_SESSION['nomeusuario']."');
-			window.location = '../view/index.html';
+			alert('Bem vindo, ".$_SESSION['nomeusuario']. "');
+			window.location = '../view/index.php';
 		</script>
 	";
 } else {
