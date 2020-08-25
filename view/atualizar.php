@@ -1,5 +1,15 @@
 <?php
     include_once('../controller/controleUsuarios.php');
+    session_start();
+
+    if((!isset ($_SESSION['usuario']) == true) and (!isset ($_SESSION['senha']) == true) and (!isset($_SESSION['nomeusuario']) == true))
+    {
+        unset($_SESSION['nomeusuario']);
+        unset($_SESSION['usuario']);
+        unset($_SESSION['senha']);
+        echo "<script>alert('Você não está logado. Tente novamente!'); window.location = 'login.php';</script>";
+    }
+
     $usuario = new controleUsuarios();
     $usuario->atualizaUsuario($usuario);
 ?>
@@ -13,13 +23,7 @@
 <body>
 
     <?php
-        session_start();
-        if((!isset ($_SESSION['usuario']) == true) and (!isset ($_SESSION['senha']) == true) and (!isset($_SESSION['nomeusuario']) == true))
-        {
-            unset($_SESSION['usuario']);
-            unset($_SESSION['senha']);
-            echo "<script>alert('Você não está logado. Tente novamente!'); window.location = 'login.php';</script>";
-        }
+
     ?>
     <form action="atualizar.php?atualizar&id=<?= $usuario->getIdusuario(); ?>" method="post">
 

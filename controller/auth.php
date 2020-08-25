@@ -1,24 +1,31 @@
 <?php
 
+include_once '../model/database/db-connect.php';
 session_start();
-$query =  "select * from usuario where login = '".$_POST['usuario']."' and senha = '".$_POST['senha']."';";
 
-$connect = mysqli_connect('localhost', 'root', '0000','controle-usuarios','3306');
-$result = mysqli_query($connect,$query);
+$connection = getConnection();
+$query =  "select * from usuario where login = :login and senha = :senha;";
 
-if(mysqli_num_rows($result) == 1){
+$statement = $connection->prepare($query);
+$statement->bindParam(':login', $_POST['usuario']);
+$statement->bindParam(':senha', $_POST['senha']);
+$statement->execute();
 
-    $rows = mysqli_fetch_array($result);
-    $_SESSION['nomeusuario'] = $rows['nomeusuario'];
-    $_SESSION['usuario'] = $rows['login'];
-    $_SESSION['senha'] = $rows['senha'];
+$resultset = $statement->fetch(PDO::FETCH_ASSOC);
+
+if($statement->rowCount() == 1){
+
+    $_SESSION['nomeusuario'] = $resultset['nomeusuario'];
+    $_SESSION['usuario'] = $resultset['login'];
+    $_SESSION['senha'] = $resultset['senha'];
 
     echo "
 		<script>
-			alert('Bem vindo, amiguinho ".$_SESSION['nomeusuario']. "');
+			alert('Bem vindo, ".$_SESSION['nomeusuario']. "');
 			window.location = '../view/index.php';
 		</script>
 	";
+
 } else {
     unset ($_SESSION['idusuario']);
     unset ($_SESSION['usuario']);
@@ -30,4 +37,5 @@ if(mysqli_num_rows($result) == 1){
 			window.location = '../view/login.php';
 		</script>
 	";
+
 }

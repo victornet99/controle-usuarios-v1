@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-unset ($_SESSION['idusuario']);
+unset ($_SESSION['nomeusuario']);
 unset ($_SESSION['usuario']);
 unset ($_SESSION['senha']);
 

@@ -1,5 +1,15 @@
 <?php
     include_once('../controller/controleUsuarios.php');
+    session_start();
+
+    if((!isset ($_SESSION['usuario']) == true) and (!isset ($_SESSION['senha']) == true) and (!isset($_SESSION['nomeusuario']) == true))
+    {
+        unset($_SESSION['usuario']);
+        unset($_SESSION['senha']);
+        unset($_SESSION['nomeusuario']);
+        echo "<script>alert('Você não está logado. Tente novamente!'); window.location = 'login.php';</script>";
+    }
+
     $userController = new controleUsuarios();
     $lista = $userController->carregarUsuario($userController);
 ?>
@@ -11,16 +21,6 @@
     <title>Listar Usuários | Controle de Usuários</title>
 </head>
 <body>
-
-    <?php
-        session_start();
-        if((!isset ($_SESSION['usuario']) == true) and (!isset ($_SESSION['senha']) == true) and (!isset($_SESSION['nomeusuario']) == true))
-        {
-            unset($_SESSION['usuario']);
-            unset($_SESSION['senha']);
-            echo "<script>alert('Você não está logado. Tente novamente!'); window.location = 'login.php';</script>";
-        }
-    ?>
     <h2>Listagem de Usuários</h2>
     <hr>
     <table border="1px">
