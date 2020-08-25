@@ -1,20 +1,17 @@
 <?php
 
 session_start();
-$login = $_POST['usuario'];
-$senha = $_POST['senha'];
-
-$query =  "select * from usuario where login = '".$login."' and senha = '".$senha."';";
+$query =  "select * from usuario where login = '".$_POST['usuario']."' and senha = '".$_POST['senha']."';";
 
 $connect = mysqli_connect('localhost', 'root', '0000','controle-usuarios','3306');
 $result = mysqli_query($connect,$query);
 
-if((mysqli_num_rows($result) > 0)&&(mysqli_num_rows($result) < 2)){
+if(mysqli_num_rows($result) == 1){
 
     $rows = mysqli_fetch_array($result);
     $_SESSION['nomeusuario'] = $rows['nomeusuario'];
-    $_SESSION['usuario'] = $login;
-    $_SESSION['senha'] = $senha;
+    $_SESSION['usuario'] = $rows['login'];
+    $_SESSION['senha'] = $rows['senha'];
 
     echo "
 		<script>
