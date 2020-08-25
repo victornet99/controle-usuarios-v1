@@ -15,7 +15,7 @@ if(mysqli_num_rows($result) == 1){
 
     echo "
 		<script>
-			alert('Bem vindo, ".$_SESSION['nomeusuario']. "');
+			alert('Bem vindo, amiguinho ".$_SESSION['nomeusuario']. "');
 			window.location = '../view/index.php';
 		</script>
 	";
