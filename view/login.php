@@ -6,19 +6,41 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <style>
-        body {
-            background-color: #4e555b;
-        }
-    </style>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body>
-    <form action="../controller/auth.php" method="post">
-        <label for="log">Login</label>
-        <input type="text" name="usuario" id="usuario">
-        <label for="password">Senha</label>
-        <input type="password" name="senha" id="senha">
-        <input type="submit" value="Logar">
-    </form>
+
+    <div class="container">
+        <div class="my-4"></div>
+
+        <form action="../controller/auth.php" method="post" class="text-center">
+            <div class="form-row">
+                <div class="col-12">
+                    <div class="form-group">
+                        <label for="log">Login</label>
+                        <input type="text" class="form-control" name="usuario" id="usuario">
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-12">
+                    <div class="form-group">
+                        <label for="password">Senha</label>
+                        <input type="password" class="form-control" name="senha" id="senha">
+                    </div>
+                </div>
+            </div>
+
+            <div class="my-4"></div>
+
+            <input type="submit" class="btn btn-lg btn-success" value="Logar">
+
+        </form>
+
+    </div>
+
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
