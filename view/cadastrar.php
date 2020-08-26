@@ -27,72 +27,57 @@
 
         <?php include 'navbar.php'; ?>
 
-        <div class="my-4"></div>
+        <div class="container">
 
-        <div class="jumbotron">
-            <h1 class="display-4">Cadastro de Usuários</h1>
-            <p class="lead">Informe os dados antes de continuar</p>
-            <hr class="my-2">
-        </div>
+            <div class="my-4"></div>
 
-        <div class="my-4"></div>
-
-        <form action="?new" method="post">
-            <div class="form-row">
-                <div class="col-7">
-                    <label for="nomeusuario">Nome do Usuário</label>&nbsp;&nbsp;&nbsp;
-                    <input class="form-control" type="text" name="nomeusuario" placeholder="Digite aqui o nome do usuário" required>
-                </div>
-                <div class="col-5">
-                    <label for="sobrenome">Sobrenome do Usuário</label>&nbsp;&nbsp;&nbsp;
-                    <input class="form-control" type="text" name="sobrenome" placeholder="Digite aqui o sobrenome" required>
-                </div>
+            <div class="jumbotron">
+                <h1 class="display-4">Cadastro de Usuários</h1>
+                <p class="lead">Informe os dados antes de continuar</p>
+                <hr class="my-2">
             </div>
-        </form>
 
+            <div class="my-4"></div>
+
+            <form action="?new" method="post">
+                <div class="form-row">
+                    <div class="col-7">
+                        <label for="nomeusuario">Nome do Usuário</label>&nbsp;&nbsp;&nbsp;
+                        <input class="form-control" type="text" name="nomeusuario" placeholder="Digite aqui o nome do usuário" required>
+                    </div>
+                    <div class="col-5">
+                        <label for="sobrenome">Sobrenome do Usuário</label>&nbsp;&nbsp;&nbsp;
+                        <input class="form-control" type="text" name="sobrenome" placeholder="Digite aqui o sobrenome" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-6">
+                        <label for="idade">Idade do Usuário</label>
+                        <input type="text" class="form-control" name="idade" placeholder="Digite aqui a idade do usuário" required>
+                    </div>
+                    <div class="col-6">
+                        <label for="contato">Contato do Usuário</label>
+                        <input type="text" class="form-control" name="contato" placeholder="Digite aqui o telefone" required>
+                    </div>
+                    <div class="col-6">
+                        <label for="login">Login de Usuário</label>
+                        <input type="text" class="form-control" name="login" placeholder="Digite o login de usuário" required>
+                    </div>
+                    <div class="col-6">
+                        <label for="senha">Senha de Usuário</label>
+                        <input type="password" class="form-control" name="senha" placeholder="Digite o login de usuário" required>
+                    </div>
+                </div>
+                <br>
+                <div class="form-row">
+                    <div class="col-12 text-center">
+                        <input type="submit" value="Salvar Informações" class="btn btn-outline-success">
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
-<!--
-    <form action="?new" method="post">
 
-        <h2>Cadastrar Novo Usuário</h2>
-        <hr>
-
-        <label for="nomeusuario">Nome do Usuário</label>&nbsp;&nbsp;&nbsp;
-        <input type="text" name="nomeusuario" placeholder="Digite aqui o nome do usuário" required>
-
-        <br><br>
-
-        <label for="sobrenome">Sobrenome do Usuário</label>&nbsp;&nbsp;&nbsp;
-        <input type="text" name="sobrenome" placeholder="Digite aqui o sobrenome" required>
-
-        <br><br>
-
-        <label for="idade">Idade do Usuário</label>&nbsp;&nbsp;&nbsp;
-        <input type="text" name="idade" placeholder="Digite aqui a idade do usuário" required>
-
-        <br><br>
-
-        <label for="contato">Contato do Usuário</label>&nbsp;&nbsp;&nbsp;
-        <input type="text" name="contato" placeholder="Digite aqui o telefone" required>
-
-        <br><br>
-
-        <label for="login">Login de Usuário</label>&nbsp;&nbsp;&nbsp;
-        <input type="text" name="login" placeholder="Digite o login de usuário" required>
-
-        <br><br>
-
-        <label for="senha">Senha de Usuário</label>&nbsp;&nbsp;&nbsp;
-        <input type="password" name="senha" placeholder="Digite o login de usuário" required>
-
-        <br><br>
-
-        <input type="submit" value="Salvar Informações">
-        <br><br>
-
-    </form>
-
-    -->
     <script src="js/jquery-3.5.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>

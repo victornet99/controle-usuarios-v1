@@ -25,9 +25,9 @@
                 $user = new UserAccess();
 
                 if($user->salvarUsuarios($usuario)){
-                    echo "<script>alert('Salvo com sucesso!');</script>";
+                    echo "<script>alert('Salvo com sucesso!'); window.location = '../view/index.php';</script>";
                 } else {
-                    echo "<script>alert('Erro ao salvar');</script>";
+                    echo "<script>alert('Erro ao salvar'); window.location = '../view/index.php';</script>";
                 }
             }
            
@@ -49,9 +49,9 @@
 
                 $user = new userAccess();
                 if($user->atualizarUsuarios($usuario)){
-                    echo "<script>alert('Alterado com sucesso!');</script>";
+                    echo "<script>alert('Alterado com sucesso!'); window.location = '../view/listar.php';</script>";
                 } else {
-                    echo "<script>alert('Erro ao atualizar');</script>";
+                    echo "<script>alert('Erro ao atualizar'); window.location = '../view/listar.php';</script>";
                 }
             }
 
@@ -66,9 +66,9 @@
 
                 $user = new UserAccess();
                 if($user->deletarUsuarios($usuario)){
-                    echo "<script>alert('Deletado com sucesso!');</script>";
+                    echo "<script>alert('Deletado com sucesso!'); window.location = '../view/listar.php';</script>";
                 } else {
-                    echo "<script>alert('Erro ao deletar');</script>";
+                    echo "<script>alert('Erro ao deletar'); window.location = '../view/listar.php';</script>";
                 }
             } 
         }

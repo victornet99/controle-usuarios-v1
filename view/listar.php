@@ -43,65 +43,68 @@
 
         <?php include 'navbar.php'; ?>
 
-        <div class="my-4"></div>
+       <div class="container">
 
-        <div class="jumbotron">
-            <h1 class="display-4">Listagem de Usuários</h1>
-            <p class="lead">Selecione o usuário a ser alterado</p>
-            <hr class="my-2">
-        </div>
+           <div class="my-4"></div>
 
-        <div class="my-4"></div>
+           <div class="jumbotron">
+               <h1 class="display-4">Listagem de Usuários</h1>
+               <p class="lead">Selecione o usuário a ser alterado</p>
+               <hr class="my-2">
+           </div>
 
-        <table class="display table table-bordered table-striped" cellspacing="0" width="100%">
-            <thead>
-                <tr>
-                    <td>ID</td>
-                    <td>Nome de Usuário</td>
-                    <td>Idade</td>
-                    <td>Contato</td>
-                    <td>Login</td>
-                    <td>Opções</td>
-                </tr>
-            </thead>
-            <tbody>
-            <?php
-            if($lista->rowCount() == 0){
-                ?>
-                <tr>
-                    <td colspan="6">Nenhum dado a ser exibido. Volte mais tarde.</td>
-                </tr>
-                <?php
-            } else {
-                foreach($lista as $l){
-                    ?>
-                    <tr>
-                        <td>
-                            <?= $l['idusuario']; ?>
-                        </td>
-                        <td>
-                            <?= $l['nomeusuario']; ?>
-                        </td>
-                        <td>
-                            <?= $l['idadeusuario']; ?>
-                        </td>
-                        <td>
-                            <?= $l['contato']; ?>
-                        </td>
-                        <td>
-                            <?= $l['login']; ?>
-                        </td>
-                        <td>
-                            <a class="btn btn-outline-warning" href="atualizar.php?id=<?= $l['idusuario']; ?>">Alterar Usuário</a>
-                            <a class="btn btn-outline-danger" href="deletar.php?id=<?= $l['idusuario']; ?>">Deletar Usuário</a>
-                        </td>
-                    </tr>
-                    <?php
-                }
-            }
-            ?>
-            </tbody>
-        </table>
+           <div class="my-4"></div>
+
+           <table class="display table table-bordered table-striped" cellspacing="0" width="100%">
+               <thead>
+               <tr>
+                   <td>ID</td>
+                   <td>Nome de Usuário</td>
+                   <td>Idade</td>
+                   <td>Contato</td>
+                   <td>Login</td>
+                   <td>Opções</td>
+               </tr>
+               </thead>
+               <tbody>
+               <?php
+               if($lista->rowCount() == 0){
+                   ?>
+                   <tr>
+                       <td colspan="6">Nenhum dado a ser exibido. Volte mais tarde.</td>
+                   </tr>
+                   <?php
+               } else {
+                   foreach($lista as $l){
+                       ?>
+                       <tr>
+                           <td>
+                               <?= $l['idusuario']; ?>
+                           </td>
+                           <td>
+                               <?= $l['nomeusuario']; ?>
+                           </td>
+                           <td>
+                               <?= $l['idadeusuario']; ?>
+                           </td>
+                           <td>
+                               <?= $l['contato']; ?>
+                           </td>
+                           <td>
+                               <?= $l['login']; ?>
+                           </td>
+                           <td>
+                               <a class="btn btn-outline-warning" href="atualizar.php?id=<?= $l['idusuario']; ?>">Alterar Usuário</a>
+                               <a class="btn btn-outline-danger" href="deletar.php?id=<?= $l['idusuario']; ?>">Deletar Usuário</a>
+                           </td>
+                       </tr>
+                       <?php
+                   }
+               }
+               ?>
+               </tbody>
+           </table>
+       </div>
 
     </div>
     <script src="js/popper.min.js"></script>
