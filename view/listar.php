@@ -14,7 +14,7 @@
     $lista = $userController->carregarUsuario($userController);
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,7 +27,13 @@
 
     <script>
         $(document).ready( function () {
-            $('table.display').DataTable();
+            $('table.display').DataTable(
+                {
+                    "language": {
+                        "url": "https://cdn.datatables.net/plug-ins/1.10.12/i18n/Portuguese-Brasil.json"
+                    }
+                }
+            );
         } );
     </script>
 </head>
@@ -39,7 +45,15 @@
 
         <div class="my-4"></div>
 
-        <table class="display table table-bordered table-striped" cellspacing="0">
+        <div class="jumbotron">
+            <h1 class="display-4">Listagem de Usuários</h1>
+            <p class="lead">Selecione o usuário a ser alterado</p>
+            <hr class="my-2">
+        </div>
+
+        <div class="my-4"></div>
+
+        <table class="display table table-bordered table-striped" cellspacing="0" width="100%">
             <thead>
                 <tr>
                     <td>ID</td>
@@ -78,8 +92,8 @@
                             <?= $l['login']; ?>
                         </td>
                         <td>
-                            <a href="atualizar.php?id=<?= $l['idusuario']; ?>">Alterar Usuário</a>
-                            <a href="deletar.php?id=<?= $l['idusuario']; ?>">Deletar Usuário</a>
+                            <a class="btn btn-outline-warning" href="atualizar.php?id=<?= $l['idusuario']; ?>">Alterar Usuário</a>
+                            <a class="btn btn-outline-danger" href="deletar.php?id=<?= $l['idusuario']; ?>">Deletar Usuário</a>
                         </td>
                     </tr>
                     <?php

@@ -19,12 +19,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Novo Usuário | Controle de Usuários</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body>
 
-        <?php
+    <div class="container-fluid">
 
-        ?>
+        <?php include 'navbar.php'; ?>
+
+        <div class="my-4"></div>
+
+        <div class="jumbotron">
+            <h1 class="display-4">Cadastro de Usuários</h1>
+            <p class="lead">Informe os dados antes de continuar</p>
+            <hr class="my-2">
+        </div>
+
+        <div class="my-4"></div>
+
+        <form action="?new" method="post">
+            <div class="form-row">
+                <div class="col-7">
+                    <label for="nomeusuario">Nome do Usuário</label>&nbsp;&nbsp;&nbsp;
+                    <input class="form-control" type="text" name="nomeusuario" placeholder="Digite aqui o nome do usuário" required>
+                </div>
+                <div class="col-5">
+                    <label for="sobrenome">Sobrenome do Usuário</label>&nbsp;&nbsp;&nbsp;
+                    <input class="form-control" type="text" name="sobrenome" placeholder="Digite aqui o sobrenome" required>
+                </div>
+            </div>
+        </form>
+
+    </div>
+<!--
     <form action="?new" method="post">
 
         <h2>Cadastrar Novo Usuário</h2>
@@ -64,5 +91,10 @@
         <br><br>
 
     </form>
+
+    -->
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
