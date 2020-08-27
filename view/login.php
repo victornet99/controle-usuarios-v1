@@ -14,16 +14,15 @@
         <div class="my-4"></div>
 
         <form action="../controller/auth.php" method="post" class="text-center">
-            <div class="form-row">
-                <div class="col-12">
+            <div class="form-row d-flex justify-content-center">
+                <div class="col-5">
                     <div class="form-group">
                         <label for="log">Login</label>
                         <input type="text" class="form-control" name="usuario" id="usuario">
                     </div>
                 </div>
-            </div>
-            <div class="form-row">
-                <div class="col-12">
+                <div class="w-100"></div>
+                <div class="col-5">
                     <div class="form-group">
                         <label for="password">Senha</label>
                         <input type="password" class="form-control" name="senha" id="senha">
